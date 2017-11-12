@@ -12,7 +12,7 @@ module SuperReceptionist
   	  SuperReceptionist.submit(:post,call_url('account/call/makecall'), options)
   	end
 
-  	private:
+  	private
 
   	def call_url(path)
   	  @super_receptionis.base_url + path

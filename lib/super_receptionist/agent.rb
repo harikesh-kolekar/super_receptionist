@@ -12,7 +12,7 @@ module SuperReceptionist
       SuperReceptionist.submit(:get, url(id))
     end
 
-    private:
+    private
 
     def  url(path='')
       "#{@super_receptionis.base_url}account/agent/#{path}"

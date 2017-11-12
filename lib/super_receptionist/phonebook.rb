@@ -12,7 +12,7 @@ module SuperReceptionist
   	  SuperReceptionist.submit(:post, url, options)
   	end
 
-  	private:
+  	private
 
   	def  url()
   	  "#{@super_receptionis.base_url}account/contacts/phonebook/"

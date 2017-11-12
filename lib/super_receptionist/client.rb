@@ -39,10 +39,10 @@ module SuperReceptionist
     private
 
     def header
-      { 'Content-Type': 'application/json',
-        'channel': SuperReceptionist.channel,
-        'x-api-key': SuperReceptionist.x_api_key,
-        'authorization': SuperReceptionist.authorization
+      { 'Content-Type' => 'application/json',
+        'channel' => SuperReceptionist.channel,
+        'x-api-key' => SuperReceptionist.x_api_key,
+        'authorization' => SuperReceptionist.authorization
       }
     end
 
@@ -73,13 +73,13 @@ module SuperReceptionist
     end
 
     def http_client
-      http = Net::HTTP.new(mailgun_url.host, mailgun_url.port)
+      http = Net::HTTP.new(super_receptionist_url.host, super_receptionist_url.port)
       http.use_ssl = true
       http
     end
 
-    def mailgun_url
-      URI.parse Mailgun().base_url
+    def super_receptionist_url
+      URI.parse SuperReceptionist().base_url
     end
 
     def set_auth(request)
@@ -88,7 +88,7 @@ module SuperReceptionist
   end
 end
 
-module Mailgun
+module SuperReceptionist
   class ClientError < StandardError
     attr_accessor :http_code, :http_body
   end

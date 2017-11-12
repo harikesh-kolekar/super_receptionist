@@ -20,7 +20,7 @@ module SuperReceptionist
       SuperReceptionist.submit(:post, url('add-numbers'), options)
     end
 
-  	private:
+  	private
 
   	def  url(path='')
   	  "#{@super_receptionis.base_url}account/call/campaign/#{path}"

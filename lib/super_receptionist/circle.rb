@@ -8,7 +8,7 @@ module SuperReceptionist
   	  SuperReceptionist.submit(:get, url, options)
   	end
 
-  	private:
+  	private
 
   	def  url()
   	  "#{@super_receptionis.base_url}account/numbers/Circle"

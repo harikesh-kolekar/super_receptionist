@@ -16,7 +16,7 @@ module SuperReceptionist
       SuperReceptionist.submit(:put, url, options)
     end
 
-  	private:
+  	private
 
   	def  url()
   	  "#{@super_receptionis.base_url}account/notifications/"
