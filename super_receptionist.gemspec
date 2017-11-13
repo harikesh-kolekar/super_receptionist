@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'super_receptionist'
   spec.version       = SuperReceptionist::VERSION
   spec.authors       = ['Harikesh Kolekar']
-  spec.email         = ['harikeshkolekar@gmail.com']
+  spec.email         = ['harikeshkolekarr@gmail.com']
 
   spec.summary       = %q{SuperReceptionist library for Ruby}
   spec.description   = %q{Idiomatic library for using the SuperReceptionist API from within ruby}
