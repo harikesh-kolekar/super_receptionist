@@ -19,21 +19,18 @@ Or install it yourself as:
     $ gem install super_receptionist
 
 ## SuperReceptionist exposes the following resources:
-	* Agent
-	* Call
-	* Campaign
-	* Circle
-	* Notification
-	* Number
-	* Phonebook
-	* Plans
-	* Sound
-	* Task
-
+  * Agent
+  * Call
+  * Campaign
+  * Circle
+  * Notification
+  * Number
+  * Phonebook
+  * Plans
+  * Sound
+  * Task
 ## Usage
 We mimic the ActiveRecord-style interface.
-
-
 #### Configuration
 ```ruby
 # Initialize your Mailgun object:
