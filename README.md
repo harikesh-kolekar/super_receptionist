@@ -1,8 +1,6 @@
-# SuperReceptionist
+# SuperReceptionist ruby gem
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/super_receptionist`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem allows for idiomatic SuperReceptionist usage from within ruby. SuperReceptionist is everything you need for your business phone system. Check it out at https://sr.knowlarity.com/
 
 ## Installation
 
@@ -20,9 +18,43 @@ Or install it yourself as:
 
     $ gem install super_receptionist
 
-## Usage
+## SuperReceptionist exposes the following resources:
+	* Agent
+	* Call
+	* Campaign
+	* Circle
+	* Notification
+	* Number
+	* Phonebook
+	* Plans
+	* Sound
+	* Task
 
-TODO: Write usage instructions here
+## Usage
+We mimic the ActiveRecord-style interface.
+
+
+#### Configuration
+```ruby
+# Initialize your Mailgun object:
+SuperReceptionist.configure do |config|
+  config.channel = 'your-channel'
+  config.x_api_key  = 'your-x_api_key'
+  config.authorization = 'your-authorization'
+end
+
+@super_receptionist = SuperReceptionist()
+
+# or alternatively:
+@super_receptionist = SuperReceptionist(:channel => 'your-channel',
+					                    :x_api_key => 'your-x_api_key'
+					                    :authorization => 'your-authorization'
+									   )
+```
+
+
+
+
 
 ## Development
 
