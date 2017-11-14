@@ -44,7 +44,7 @@ end
 
 # or alternatively:
 @super_receptionist = SuperReceptionist(:channel => 'your-channel',
-                                        :x_api_key => 'your-x_api_key'
+                                        :x_api_key => 'your-x_api_key',
                                         :authorization => 'your-authorization'
                                        )
 ```
