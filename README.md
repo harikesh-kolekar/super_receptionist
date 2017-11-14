@@ -33,7 +33,7 @@ Or install it yourself as:
 We mimic the ActiveRecord-style interface.
 #### Configuration
 ```ruby
-# Initialize your Mailgun object:
+# Initialize your SuperReceptionist object:
 SuperReceptionist.configure do |config|
   config.channel = 'your-channel'
   config.x_api_key  = 'your-x_api_key'
