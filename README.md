@@ -1,6 +1,6 @@
 # SuperReceptionist ruby gem
 
-This gem allows for idiomatic SuperReceptionist usage from within ruby. SuperReceptionist is everything you need for your business phone system. Check it out at https://sr.knowlarity.com/
+This gem allows for idiomatic SuperReceptionist usage from within ruby. SuperReceptionist is everything you need for your business phone system. Check it out at https://developer.knowlarity.com/api-reference
 
 ## Installation
 
@@ -49,9 +49,97 @@ end
                                        )
 ```
 
+#### Agent
+```ruby
+# Get Agents List
+@super_receptionist.agent.list()
 
+# Find Agent with id
+@super_receptionist.agent.find(<agent_id>)
 
+```
 
+#### Call
+
+```ruby
+#Get call logs
+filter_option = {
+                  start_time:"2017-03-13 12:00:00+05:30", #Mandatory
+                  end_time:"2017-03-14 12:00:00+05:30",  #Mandatory
+                  call_type: <call_type>, 
+                  agent_number: <agent_number>,
+                  knowlarity_number: <knowlarity_number>,
+                  business_call_type: <business_call_type>,
+                  customer_number: <customer_number>,
+                  limit: <limit>
+                }
+
+@super_receptionist.call.logs(filter_option)
+
+# Make Ougoing call
+call_details = {
+        "k_number": "+919069118xxx",
+        "agent_number": "+919069118xxx",
+        "customer_number": "+918861037xxx"
+    }
+@super_receptionist.call.makecall(call_details)
+
+```
+
+#### Campaign
+
+```ruby
+# Get Campaign list
+filter_option = {
+                  order_id: <order_id>,
+                  created_time__gte: <created_time__gte>,
+                  created_time__lte: <created_time__lte>, 
+                  agent_number: <agent_number>,
+                  end_time__gt: <end_time__gt>,
+                  end_time__gte: <end_time__gte>,
+                  end_time__lt : <end_time__lt >,
+                  end_time__lte: <end_time__lte>,
+                  is_transactional: <is_transactional>,
+                  ivr_id: <ivr_id>,
+                  phonebook_id: <phonebook_id>,
+                  start_time__gt: <start_time__gt>,
+                  start_time__gte: <start_time__gte>,
+                  start_time__lt: <start_time__lt>,
+                  start_time__lte: <start_time__lte>
+                }
+
+@super_receptionist.campaign.list(filter_option)
+
+# Create new Campaign 
+create_option = {
+                  sound_id/ivr_id: <sound_id/ivr_id>, #Required
+                  timezone: <timezone>, #Required
+                  start_time: <start_time>,  #Required
+                  k_number: <k_number>, #Required
+                  phonebook: <phonebook>,
+                  priority: <priority>,
+                  order_throttling : <order_throttling >,
+                  retry_duration: <retry_duration>,
+                  max_retry: <max_retry>,
+                  end_time: <end_time>,
+                  call_scheduling: <call_scheduling>,
+                  call_scheduling_start_time: <call_scheduling_start_time   >,
+                  call_scheduling_stop_time: <call_scheduling_stop_time>,
+                  additional_number: <additional_number>,
+                  is_transactional: <is_transactional>
+                }
+
+@super_receptionist.campaign.create(create_option)
+
+# Update Campaign
+campaign = { status: <status>  }
+@super_receptionist.campaign.update(<id>, campaign)
+
+# Add Number to Campaign
+campaign = { order_id: <order_id> , phone_numbers: <phone_numbers> }
+@super_receptionist.campaign.add_number(<id>, campaign)
+
+```
 
 ## Development
 
