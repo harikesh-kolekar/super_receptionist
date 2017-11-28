@@ -1,5 +1,5 @@
 module SuperReceptionist
-  class Plans
+  class Plan
   	def initialize(super_receptionist)
   	  @super_receptionis = super_receptionist
   	end

@@ -12,7 +12,7 @@ module SuperReceptionist
   	  SuperReceptionist.submit(:post, url, options)
   	end
 
-    def bought(options = {})
+    def list(options = {})
       SuperReceptionist.submit(:get, url, options)
     end
 

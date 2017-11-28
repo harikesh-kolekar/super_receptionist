@@ -118,7 +118,7 @@ create_option = {
                   k_number: <k_number>, #Required
                   phonebook: <phonebook>,
                   priority: <priority>,
-                  order_throttling : <order_throttling >,
+                  order_throttling: <order_throttling >,
                   retry_duration: <retry_duration>,
                   max_retry: <max_retry>,
                   end_time: <end_time>,
@@ -141,6 +141,98 @@ campaign = { order_id: <order_id> , phone_numbers: <phone_numbers> }
 
 ```
 
+### Circle
+```ruby
+# Get list of circle
+@super_receptionist.circle.list({country: <country>})
+```
+
+### Notifications
+```ruby
+# List of registored mobile number for notification
+@super_receptionist.notification.list()
+
+# Registor nuber for notification
+@super_receptionist.notification.registor_number({knowlarity_number: <knowlarity_number>})
+
+# Update notification status
+@super_receptionist.notification.update({knowlarity_number: <knowlarity_number>, enable: <enable>})
+```
+
+### Number
+```ruby
+# Get List of Available number
+available_number_filter = {
+                  circle_id: <circle_idd>, #Required
+                  cli_type: <cli_type>,
+                  number_rating: <number_rating>,
+                  number_type : <number_type >,
+                  pattern: <pattern>
+                }
+
+@super_receptionist.number.available(available_bumber_filter)
+
+# Buy the number
+buy_number =    {
+                  user_plan_id: <user_plan_id>, #Required
+                  expiry_time: <expiry_time>, #Required
+                  number: <number>,  #Required
+                  cli_type: <cli_type>,
+                  priority: <priority>,
+                }
+@super_receptionist.number.buy(buy_number)
+
+# Get list of bought numbers
+bought_number_filter = {
+                  user_plan_id: <user_plan_id>, 
+                  expiry_time: <expiry_time>, 
+                  number: <number>,  
+                }
+@super_receptionist.number.list(bought_number_filter)
+
+```
+
+# Phonebook
+
+```ruby
+# Get list of phonebooks associated with the SR account.
+@super_receptionist.phonebook.list()
+
+# Upload a phonebook in associated SR account.
+@super_receptionist.phonebook.create(phonebookname: <phonebookname>,numbers: <numbers>)
+
+```
+
+### Plans
+```ruby
+# Get list of plans
+@super_receptionist.plan.list({ id: <id>, plan: <plan>, plan_type: <plan_type> })
+
+```
+### Sound
+```ruby
+# Get List of sound
+@super_receptionist.sound.list()
+
+# Upload sound to the associated SR account.
+sound = {
+          soundname: <soundname>, 
+          soundfile: <soundfile_URL>,
+          language: <language>,
+          description:<description>
+        }
+@super_receptionist.sound.create(sound)
+```
+
+### Task
+```ruby
+# Get list of Task
+@super_receptionist.task.list()
+
+# Get Task details
+@super_receptionist.task.list(<id>)
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
@@ -150,6 +242,11 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/super_receptionist. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+
+
+## TO DO
+  * Test manually with all account type.
+  * Write Rspec
 
 
 ## License

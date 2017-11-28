@@ -42,8 +42,8 @@ module SuperReceptionist
       SuperReceptionist::Phonebook.new(self)
     end
 
-    def plans
-      SuperReceptionist::Plans.new(self)
+    def plan
+      SuperReceptionist::Plan.new(self)
     end
 
     def sound
